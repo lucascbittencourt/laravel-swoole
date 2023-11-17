@@ -20,5 +20,10 @@ jobs:
       - name: Install Dependencies
         run: composer install --no-interaction --prefer-dist --optimize-autoloader
 
+      - name: Prepare Laravel Application
+        run: |
+          cp .env.ci .env
+          php artisan key:generate
+
       - name: Tests coverage
         run: ./vendor/bin/pest --coverage --min=80

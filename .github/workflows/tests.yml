@@ -3,7 +3,7 @@ name: Tests
 on: ['push']
 
 jobs:
-  ci:
+  pest:
     runs-on: ubuntu-latest
 
     steps:
@@ -21,4 +21,4 @@ jobs:
         run: composer install --no-interaction --prefer-dist --optimize-autoloader
 
       - name: Tests
-        run: ./vendor/bin/pest --coverage --min=80 --type-coverage --min=80
+        run: XDEBUG_MODE=coverage ./vendor/bin/pest --coverage --min=80 --type-coverage --min=80

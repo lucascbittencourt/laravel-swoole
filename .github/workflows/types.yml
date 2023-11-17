@@ -1,9 +1,9 @@
-name: Tests
+name: Types
 
 on: ['push']
 
 jobs:
-  pest:
+  types:
     runs-on: ubuntu-latest
 
     steps:
